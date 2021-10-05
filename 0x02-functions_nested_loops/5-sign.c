@@ -1,7 +1,8 @@
 #include "main.h"
 /**
  * print_sign - Write a function that prints the sign of a number
- * Return -1 if the number is negative, 0 if is 0 and 1 if is positive
+ * @n: data
+ * Return: -1 if the number is negative, 0 if is 0 and 1 if is positive
  */
 int print_sign(int n)
 {
