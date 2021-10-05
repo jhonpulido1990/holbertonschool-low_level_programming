@@ -21,6 +21,8 @@ int _abs(int);
 int print_last_digit(int);
 /*function that prints every minute of the day*/
 void jack_bauer(void);
+/*function that prints the 9 times table*/
+void times_table(void);
 /*adds two integers and returns the result*/
 int add(int, int);
 /*prints all natural numbers from n to 98, followed by a new line*/
