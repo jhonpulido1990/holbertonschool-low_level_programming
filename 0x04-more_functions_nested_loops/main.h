@@ -13,5 +13,7 @@ int _isdigit(int c);
 int mul(int a, int b);
 /*prints the numbers, from 0 to 9, followed by a new line*/
 void print_numbers(void);
+/*prints the numbers, from 0 to 9, followed by a new line*/
+void print_most_numbers(void);
 
 #endif /*HEADER_FILE*/
