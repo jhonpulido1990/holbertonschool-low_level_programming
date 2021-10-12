@@ -15,6 +15,8 @@ int _strlen(char *s);
 void _puts(char *str);
 /*function that prints a string, in reverse, followed by a new line.*/
 void print_rev(char *s);
+/*function that prints n elements of an array of integers*/
+void print_array(int *a, int n);
 /*Write a function that copies the string pointed to by src*/
 char *_strcpy(char *dest, char *src);
 
