@@ -15,6 +15,8 @@ int _strlen(char *s);
 void _puts(char *str);
 /*function that prints a string, in reverse, followed by a new line.*/
 void print_rev(char *s);
+/*Write a function that prints every other character of a string*/
+void puts2(char *str);
 /*Write a function that prints half of a string*/
 void puts_half(char *str);
 /*function that prints n elements of an array of integers*/
