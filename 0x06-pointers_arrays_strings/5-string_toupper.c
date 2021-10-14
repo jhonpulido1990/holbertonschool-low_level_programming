@@ -1,8 +1,8 @@
 #include "main.h"
 /**
- * 
- * 
- * 
+ * string_toupper - check the code
+ * @str: data
+ * Return: Always 0.
  */
 char *string_toupper(char *str)
 {
@@ -10,7 +10,7 @@ char *string_toupper(char *str)
 
 	while (str[i])
 	{
-		if (str[i] >= 97 && str[i] <= 122)
+		if (str[i] > 96 && str[i] < 123)
 		{
 			str[i] = str[i] - 32;
 		}
