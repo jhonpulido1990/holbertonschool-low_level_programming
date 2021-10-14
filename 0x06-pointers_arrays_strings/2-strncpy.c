@@ -3,7 +3,7 @@
  * _strncpy - function that copies a string.
  * @dest: s1
  * @src: data
- * n: posistion string
+ * @n: posistion string
  * Return: string dest
  */
 char *_strncpy(char *dest, char *src, int n)
