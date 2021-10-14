@@ -17,5 +17,7 @@ int _strcmp(char *s1, char *s2);
 void reverse_array(int *a, int n);
 /*changes all lowercase letters of a string to uppercase*/
 char *string_toupper(char *);
+/*function that encodes a string into 1337*/
+char *leet(char *str);
 
 #endif /* MAIN_H */
