@@ -21,5 +21,7 @@ char *_strstr(char *haystack, char *needle);
 void print_chessboard(char (*a)[8]);
 /*prints the sum of the two diagonals of a square matrix of integers*/
 void print_diagsums(int *a, int size);
+/*Write a function that sets the value of a pointer to a char*/
+void set_string(char **s, char *to);
 
 #endif /* MAIN_H */
