@@ -23,6 +23,6 @@ int is_prime_number(int n);
 int is_palindrome(char *s);
 /*compar two string and returns 1 if the string can be considered identical*/
 int wildcmp(char *s1, char *s2);
-int root(int base, int number);
+int ruot(int base, int number);
 
 #endif /* MAIN_H */
