@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "main.h"
 /**
  * main - passed back to the command line interpreter
  * @argc: count of the arguments
