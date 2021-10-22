@@ -7,7 +7,7 @@
  */
 int main(int argc, char *argv[])
 {
-    int i = 1, multiplies = 1;
+    int i = 1, mult = 1;
 
     if (argc != 3)
     {
@@ -16,8 +16,8 @@ int main(int argc, char *argv[])
     }
     for (; i < argc; i++)
     {
-        multiplies *= atoi(argv[i]);
+        mult *= atoi(argv[i]);
     }
-    printf("%d\n", multiplies);
+    printf("%d\n", mult);
     return (0);
 }
