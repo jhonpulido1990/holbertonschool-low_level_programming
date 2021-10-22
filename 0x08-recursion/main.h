@@ -20,6 +20,7 @@ int _sqrt_recursion(int n);
 int ruot(int base, int number);
 /*returns 1 if the input integer is a prime number, otherwise return 0*/
 int is_prime_number(int n);
+int prime(int n, int i);
 /*Write a function that returns 1 if a string is a palindrome and 0 if not*/
 int is_palindrome(char *s);
 /*compar two string and returns 1 if the string can be considered identical*/
