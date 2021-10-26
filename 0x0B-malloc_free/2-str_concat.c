@@ -30,7 +30,6 @@ char *str_concat(char *s1, char *s2)
 	{
 		return (NULL);
 	}
-	
 	for (p = 0; p < i; p++)
 	{
 		if (s1[p] != '\0')
