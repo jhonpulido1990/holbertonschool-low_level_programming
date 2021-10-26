@@ -7,14 +7,14 @@
  */
 char *create_array(unsigned int size, char c)
 {
-	char *prt = malloc(size * sizeof(int));
 	unsigned int i = 0;
+	char *prt = malloc(size * sizeof(int));
 
-	if (size == 0)
+	if (prt == NULL)
 	{
 		return (NULL);
 	}
-	if (c == '\0')
+	if (size == 0)
 	{
 		return (NULL);
 	}
