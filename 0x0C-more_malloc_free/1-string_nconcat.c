@@ -17,7 +17,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		if (s2 == NULL)
 			s2 = "";
 		for (i = 0; s1[i]; i++)
+			;
 		for (j = 0; s2[j]; j++)
+			;
 		if (n >= j + 1)
 			size = i + j;
 		else
@@ -34,7 +36,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 			ptr1[p] = s2[k];
 			p++;
 		}
-		ptr1[p] = '\0';
+		ptr1[size] = '\0';
 		return (ptr1);
 	}
 }
