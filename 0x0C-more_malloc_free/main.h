@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <limits.h>
 #include <stdlib.h>
+#include <string.h>
 /*call a funtion _putchar*/
 int _putchar(char c);
 /*function that allocates memory using malloc*/
