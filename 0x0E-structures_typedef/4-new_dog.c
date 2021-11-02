@@ -68,7 +68,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		new_owner = malloc(sizeof(char) * _strlen(owner) + 1);
 		if (new_owner == NULL)
 		{
-			free(name);
+			free(new_name);
 			free(dogshow);
 			return (NULL);
 		}
