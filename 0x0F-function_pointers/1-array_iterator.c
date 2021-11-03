@@ -9,7 +9,7 @@ void array_iterator(int *array, size_t size, void (*action)(int))
 {
 	unsigned int i = 0;
 
-	if (array == NULL)
+	if (array == NULL && action == NULL)
 	{
 		return;
 	}
@@ -20,4 +20,5 @@ void array_iterator(int *array, size_t size, void (*action)(int))
 			action(array[i]);
 		}
 	}
+
 }
