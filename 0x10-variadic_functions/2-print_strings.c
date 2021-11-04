@@ -1,9 +1,8 @@
 #include "variadic_functions.h"
 /**
  * print_strings - function that prints strings, followed by a new line.
-
- *  
- * 
+ *  @separator: array
+ * @n: size array
  */
 void print_strings(const char *separator, const unsigned int n, ...)
 {
