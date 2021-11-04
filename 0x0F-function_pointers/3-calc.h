@@ -15,8 +15,6 @@ typedef struct op
 	char *op;
 	int (*f)(int a, int b);
 } op_t;
-/*3-main*/
-int main(int argc, char *argv[]);
 /*3-get_op_func*/
 int (*get_op_func(char *s))(int, int);
 /*op_functions*/
