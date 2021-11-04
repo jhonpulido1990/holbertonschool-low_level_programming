@@ -2,7 +2,7 @@
 /**
  * print_strings - function that prints strings, followed by a new line.
  *  @separator: array
- * @n: size array
+ * @n: size ar
  */
 void print_strings(const char *separator, const unsigned int n, ...)
 {
