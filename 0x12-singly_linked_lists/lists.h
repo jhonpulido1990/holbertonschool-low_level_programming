@@ -3,6 +3,8 @@
 /*include library*/
 #include <unistd.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 /*call a funtion _putchar*/
 int _putchar(char c);
 /*prints all the elements of a list_t list.*/
