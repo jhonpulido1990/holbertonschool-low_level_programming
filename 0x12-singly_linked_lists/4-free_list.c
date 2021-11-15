@@ -8,10 +8,8 @@ void free_list(list_t *head)
 {
 	list_t *tmp;
 
-	while (1)
+	while (head == NULL)
 	{
-		if (head == NULL)
-			break;
 		tmp = head;
 		head = tmp->next;
 		free(tmp->str);
