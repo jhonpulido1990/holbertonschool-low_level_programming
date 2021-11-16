@@ -1,7 +1,9 @@
 #include "lists.h"
 /**
- * @brief 
- * 
+ * add_nodeint_end - adds a new node at the end
+ * @head: head of node
+ * @n: data to save
+ * Return: adress new node
  */
 listint_t *add_nodeint_end(listint_t **head, const int n)
 {
