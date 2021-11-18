@@ -4,6 +4,8 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
+/*call putchar*/
+int _putchar(char c);
 /*converts a binary number to an unsigned int*/
 unsigned int binary_to_uint(const char *b);
 /*prints the binary representation of a number*/
