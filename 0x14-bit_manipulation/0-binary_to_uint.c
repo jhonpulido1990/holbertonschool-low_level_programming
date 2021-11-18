@@ -8,6 +8,10 @@ unsigned int binary_to_uint(const char *b)
 {
 	int a = 0, decimal = 0, oper = 1;
 
+	if (b == NULL)
+	{
+		return (0);
+	}
 	for (a = 0; b[a] != '\0'; a++)
 	{
 		if (b[a] != '0' && b[a] != '1')
