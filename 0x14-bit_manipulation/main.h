@@ -4,6 +4,7 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
 /*call putchar*/
 int _putchar(char c);
 /*converts a binary number to an unsigned int*/
@@ -18,5 +19,7 @@ int set_bit(unsigned long int *n, unsigned int index);
 int clear_bit(unsigned long int *n, unsigned int index);
 /*number of bits you would need to flip to get from one number to another*/
 unsigned int flip_bits(unsigned long int n, unsigned long int m);
+/*function that checks the endianness*/
+int get_endianness(void);
 
 #endif /* MAIN_H */
