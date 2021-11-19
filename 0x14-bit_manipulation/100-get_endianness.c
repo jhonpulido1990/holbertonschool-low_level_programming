@@ -1,15 +1,17 @@
 #include "main.h"
 /**
- * @brief 
- * 
+ * get_endianness - function that checks the endianness
+ * Return: checks endianness
  */
 int get_endianness(void)
 {
-	union
-	{
-		uint32_t i;
-		char c[4];
-	} e = {0x01000000};
+	int x = 1;
+	char *y;
 
-	return (e.c[0]);
+	y = (char *)&x;
+	if (*y)
+	{
+		return (1);
+	}
+	return (0);
 }
