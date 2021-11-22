@@ -2,24 +2,19 @@
 #define MAIN_H
 /*include library*/
 #include <unistd.h>
+#include <fcntl.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
 /*call putchar*/
 int _putchar(char c);
-/*converts a binary number to an unsigned int*/
-unsigned int binary_to_uint(const char *b);
-/*prints the binary representation of a number*/
-void print_binary(unsigned long int n);
-/*returns the value of a bit at a given index*/
-int get_bit(unsigned long int n, unsigned int index);
-/*sets the value of a bit to 1 at a given index*/
-int set_bit(unsigned long int *n, unsigned int index);
-/*sets the value of a bit to 0 at a given index*/
-int clear_bit(unsigned long int *n, unsigned int index);
-/*number of bits you would need to flip to get from one number to another*/
-unsigned int flip_bits(unsigned long int n, unsigned long int m);
-/*function that checks the endianness*/
-int get_endianness(void);
+/*reads a text file and prints it to the POSIX standard output*/
+ssize_t read_textfile(const char *filename, size_t letters);
+/*Create a function that creates a file*/
+int create_file(const char *filename, char *text_content);
+/*function that appends text at the end of a file*/
+int append_text_to_file(const char *filename, char *text_content);
+/*program that copies the content of a file to another file*/
+
 
 #endif /* MAIN_H */
