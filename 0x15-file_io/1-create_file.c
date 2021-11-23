@@ -5,7 +5,7 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	int fd;
+	int fd, count;
 	char *buffer;
 
 	if (filename == NULL)
@@ -22,8 +22,8 @@ int create_file(const char *filename, char *text_content)
 	{
 		return (0);
 	}
-	count = read(fd, buffer, letters);
-	write(fd, buffer, letters);
+	count = read(fd, buffer, O_APPEND);
+	write(fd, buffer, O_APPEND);
 	close(fd);
 	free(buffer);
 	return (count);
