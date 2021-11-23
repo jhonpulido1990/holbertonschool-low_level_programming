@@ -9,6 +9,7 @@ int append_text_to_file(const char *filename, char *text_content)
 {
 	int fd, size, count;
 
+	size = 0;
 	if (filename == NULL)
 	{
 		return (-1);
@@ -26,7 +27,10 @@ int append_text_to_file(const char *filename, char *text_content)
 			close(fd);
 			return (-1);
 		}
-		size = strlen(text_content);
+		while (*(text_content + size))
+		{
+			size++;
+		}
 		count = write(fd, text_content, size);
 		if (count == -1)
 		{
