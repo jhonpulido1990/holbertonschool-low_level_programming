@@ -26,13 +26,12 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 	count = read(fd, buffer, letters);
+	close(fd);
 	count1 = write(1, buffer, letters);
 	if ((count1 == -1) | (count == -1))
 	{
-		close(fd);
 		return (0);
 	}
-	close(fd);
 	free(buffer);
 	return (count);
 }
