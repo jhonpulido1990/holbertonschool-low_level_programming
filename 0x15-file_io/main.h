@@ -6,6 +6,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
+#include <sys/types.h>
+#include <string.h>
+#include <sys/stat.h>
 /*call putchar*/
 int _putchar(char c);
 /*reads a text file and prints it to the POSIX standard output*/
