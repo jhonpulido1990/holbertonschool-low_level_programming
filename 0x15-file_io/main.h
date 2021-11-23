@@ -8,7 +8,6 @@
 #include <stdint.h>
 #include <sys/types.h>
 #include <string.h>
-#include <sys/stat.h>
 /*call putchar*/
 int _putchar(char c);
 /*reads a text file and prints it to the POSIX standard output*/
@@ -18,6 +17,5 @@ int create_file(const char *filename, char *text_content);
 /*function that appends text at the end of a file*/
 int append_text_to_file(const char *filename, char *text_content);
 /*program that copies the content of a file to another file*/
-
 
 #endif /* MAIN_H */
