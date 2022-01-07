@@ -1,7 +1,8 @@
 #include "lists.h"
 /**
- * @brief 
- * 
+ * sum_dlistint - sum of data the likend list
+ * @head: likend list
+ * Return: sum
  */
 int sum_dlistint(dlistint_t *head)
 {
