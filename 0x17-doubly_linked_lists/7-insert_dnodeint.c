@@ -27,11 +27,11 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		}
 		i++;
 	}
-	/*if (head->next)
-		*/
 	add_node->n = n;
 	add_node->next = head->next;
 	head->next = add_node;
 	add_node->prev = head;
-	return (head);
+	if (add_node->next != NULL)
+		add_node->next->prev = add_node;
+	return (add_node);
 }
