@@ -1,7 +1,10 @@
 #include "lists.h"
 /**
- * @brief 
- * 
+ * insert_dnodeint_at_index - insert new node
+ * @h: likend list
+ * @idx: idx
+ * @n: data
+ * Return: new node
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
