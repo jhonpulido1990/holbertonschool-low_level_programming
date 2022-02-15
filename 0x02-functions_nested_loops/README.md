@@ -1,505 +1,788 @@
-# 0x01. C - Variables, if, else, while
+# 0x02. C - Functions, nested loops
 ## Details
-      By Julien Barbier          Weight: 1              Project over - took place from 10-01-2021 to 10-02-2021          - you're done with 167% of tasks.              An auto review will be launched at the deadline      #### In a nutshell…
-* Auto QA review:          70.0/70 mandatory            &            16.6/21 optional      
-* Altogether:         179.05%* Mandatory: 100.0%
-* Optional: 79.05%
-*               Calculation:                   100.0%                    + (100.0% * 79.05%)               == 179.05%
+      By Julien Barbier          Weight: 1              Project over - took place from 10-04-2021 to 10-06-2021          - you're done with 100% of tasks.              An auto review will be launched at the deadline      #### In a nutshell…
+* Auto QA review:          106.0/106 mandatory            &            4.55/36 optional      
+* Altogether:         112.64%* Mandatory: 100.0%
+* Optional: 12.64%
+*               Calculation:                   100.0%                    + (100.0% * 12.64%)               == 112.64%
 
 ## Resources
 Read or watch :
-* [Everything you need to know to start with C.pdf](https://intranet.hbtn.io/rltoken/GB1UNodFfec0AXUfmSxsLA) 
- (You do not have to learn everything in there yet, but make sure you read it entirely first and make sure you understand the slides: “comments”, “Data types | Integer types”, “Declaration”, “Characters”, “Arithmetic operators”, “Variables assignments”, “Comparisons”, “Logical operators”, “if, if…else”, “while loops”.)
-* [Keywords and identifiers](https://intranet.hbtn.io/rltoken/ckqC9BrBcMmv-DLmBauaWQ) 
+* [Nested while loops](https://intranet.hbtn.io/rltoken/L0Vf5XJdD7ylLOyQnzVY6Q) 
 
-* [integers](https://intranet.hbtn.io/rltoken/Oau_6LT7-3IIt5ew_3Ac6g) 
+* [C - Functions](https://intranet.hbtn.io/rltoken/pU9KLKlz0W2ZSSlzJsYA7w) 
 
-* [Arithmetic Operators in C](https://intranet.hbtn.io/rltoken/r4hrHzg2X9JjnKj8sP_SAw) 
+* [Learning to Program in C (Part 06)](https://intranet.hbtn.io/rltoken/pu-exPylodWaQjU7f6KhYQ) 
+ (stop at 14:00)
+* [What is the purpose of a function prototype?](https://intranet.hbtn.io/rltoken/bANgUAj_-F9_85yHxzSD6w) 
 
-* [If statements in C](https://intranet.hbtn.io/rltoken/W93uajwXtW3WOxOaeBtF-A) 
-
-* [if…else statement](https://intranet.hbtn.io/rltoken/PMD6eKdkj2RmIpagtABihw) 
-
-* [Relational operators](https://intranet.hbtn.io/rltoken/dCy4644-X_WJMYxRZwCfFQ) 
-
-* [Logical operators](https://intranet.hbtn.io/rltoken/gJzJXQoEdEN1Oxcutp_76Q) 
-
-* [while loop in C](https://intranet.hbtn.io/rltoken/Qhq1p5UcR72-VXFJ_iAqWQ) 
-
-* [While loop](https://intranet.hbtn.io/rltoken/RY9a1EDxRKNNHhxbJ6Pn_g) 
-
-man or help :
-*  ` ascii `  (You do not need to learn about  ` scanf ` ,  ` getc ` ,  ` getchar ` ,  ` EOF ` ,  ` EXIT_SUCCESS ` ,  ` time ` ,  ` rand ` ,  ` srand ` ,  ` RAND_MAX ` ,  ` for `  loops,  ` do...while `  loops, functions.)
+* [C - Header Files](https://intranet.hbtn.io/rltoken/xC6XfUoznEIJgfdP52GUIw) 
+ (stop before the “Once-Only Headers” paragraph)
 ## Learning Objectives
-At the end of this project, you are expected to be able to  [explain to anyone](https://intranet.hbtn.io/rltoken/Wt5UkBEU7LpZ8tzq9jvpJg) 
+At the end of this project, you are expected to be able to  [explain to anyone](https://intranet.hbtn.io/rltoken/kk-N0deGCGSwdlvk-U_4XA) 
  ,  without the help of Google :
 ### General
-* What are the arithmetic operators and how to use them
-* What are the logical operators (sometimes called boolean operators) and how to use them
-* What the the relational operators and how to use them
-* What values are considered TRUE and FALSE in C
-* What are the boolean operators and how to use them
-* How to use the  ` if ` ,  ` if ... else `  statements
-* How to use comments
-* How to declare variables of types  ` char ` ,  ` int ` ,  ` unsigned int ` 
-* How to assign values to variables
-* How to print the values of variables of type  ` char ` ,  ` int ` ,  ` unsigned int `  with  ` printf ` 
-* How to use the  ` while `  loop
-* How to use variables with the  ` while `  loop
-* How to print variables using  ` printf ` 
-* What is the  ` ASCII `  character set
-* What are the purpose of the  ` gcc `  flags  ` -m32 `  and  ` -m64 ` 
+* What are nested loops and how to use them
+* What is a function and how do you use functions
+* What is the difference between a declaration and a definition of a function
+* What is a prototype
+* Scope of variables
+* What are the  ` gcc `  flags  ` -Wall -Werror -pedantic -Wextra -std=gnu89 ` 
+* What are header files and how to to use them with  ` #include ` 
 ## Requirements
 ### General
 * Allowed editors:  ` vi ` ,  ` vim ` ,  ` emacs ` 
 * All your files will be compiled on Ubuntu 20.04 LTS using  ` gcc ` , using the options  ` -Wall -Werror -Wextra -pedantic -std=gnu89 ` 
 * All your files should end with a new line
-* A  ` README.md `  file, at the root of the folder of the project
-* There should be no errors and no warnings during compilation
-* You are not allowed to use  ` system ` 
+* A  ` README.md `  file, at the root of the folder of the project is mandatory
 * Your code should use the  ` Betty `  style. It will be checked using [betty-style.pl](https://github.com/holbertonschool/Betty/blob/master/betty-style.pl) 
  and [betty-doc.pl](https://github.com/holbertonschool/Betty/blob/master/betty-doc.pl) 
 
+* You are not allowed to use global variables
+* No more than 5 functions per file
+* You are not allowed to use the standard library. Any use of functions like  ` printf ` ,  ` puts ` , etc… is forbidden
+* You are allowed to use [_putchar](https://github.com/holbertonschool/_putchar.c/blob/master/_putchar.c) 
+
+* You don’t have to push  ` _putchar.c ` , we will use our file. If you do it won’t be taken into account
+* In the following examples, the  ` main.c `  files are shown as examples. You can use them to test your functions, but you don’t have to push them to your repo (if you do we won’t take them into account). We will use our own  ` main.c `  files at compilation. Our  ` main.c `  files might be different from the one shown in the examples
+* The prototypes of all your functions and the prototype of the function  ` _putchar `  should be included in your header file called  ` main.h ` 
+* Don’t forget to push your header file
+## More Info
+You do not have to understand the call by reference (address), stack, static variables, recursions or arrays, yet.
 ## Quiz questions
 Show
 #### 
         
         Question #0
     
- Quiz question Body What is the size of the   ` unsigned int `   data type?
- Quiz question Answers * 1 byte
+ Quiz question Body Which of these loop statements don’t exist?
+ Quiz question Answers *  ` for ` 
 
-* 2 bytes
+*  ` while ` 
 
-* 4 bytes
+*  ` foreach ` 
 
-* 8 bytes
+*  ` do... while ` 
+
+*  ` loop_to ` 
+
+*  ` each ` 
 
  Quiz question Tips #### 
         
         Question #1
     
- Quiz question Body What is the size of the   ` char `   data type?
- Quiz question Answers * 1 byte
+ Quiz question Body What is the ASCII value of   ` A `  ?
+ Quiz question Answers * 97
 
-* 2 bytes
+* 65
 
-* 4 bytes
+* 12
 
-* 8 bytes
+* 1
 
  Quiz question Tips #### 
         
         Question #2
     
- Quiz question Body What is the size of the   ` float `   data type?
- Quiz question Answers * 1 byte
+ Quiz question Body What is the ASCII value of   ` a `  ?
+ Quiz question Answers * 97
 
-* 2 bytes
+* 65
 
-* 4 bytes
+* 12
 
-* 8 bytes
+* 1
 
  Quiz question Tips #### 
         
         Question #3
     
- Quiz question Body Which of the following are valid   ` if `   statements in ANSI C and Betty-compliant? (Considering   ` a `   and   ` b `   two variables of type   ` int `  )
-Please select all correct answers
- Quiz question Answers *  ` if a > b
-{
-  return (a);
-}
- ` 
-*  ` if (a > b)
-{
-  return (a);
-}
- ` 
-*  ` if {a > b}
-(
-  return {a};
-)
- ` 
-*  ` if ((((((a > b))))))
-{
-  return (a);
-}
- ` 
-*  ` if (a > b)
-  return (a);
- ` 
+ Quiz question Body What is the ASCII value of   ` J `  ?
+ Quiz question Answers * 70
+
+* 72
+
+* 74
+
+* 76
+
  Quiz question Tips #### 
         
         Question #4
     
- Quiz question Body Which of the following are valid   ` for `   statements in ANSI C and Betty-compliant? (Considering   ` a `   and   ` b `   two variables of type   ` int `  )
-Please select all correct answers
- Quiz question Answers *  ` for (a = 0; a < b; a++)
-{
-    printf("%d\n", a);
-}
- ` 
-*  ` for (a = 0; a < b; a++)
-    printf("%d\n", a);
- ` 
-*  ` for (int a = 0; a < b; a++)
-{
-    printf("%d\n", a);
-}
- ` 
-*  ` a = 0;
-for (a < b;;)
-{
-    printf("%d\n", a++);
-}
- ` 
-*  ` a = 0;
-for (; a < b;)
-{
-    printf("%d\n", a++);
-}
- ` 
+ Quiz question Body What is the ASCII value of   ` 0 `  ?
+ Quiz question Answers * 79
+
+* 0
+
+* 48
+
  Quiz question Tips #### 
         
         Question #5
     
- Quiz question Body Which of the following are valid   ` while `   or   ` do/while `   statements in ANSI C and Betty-compliant? (Considering   ` a `   and   ` b `   two variables of type   ` int `  )
-Please select all correct answers
- Quiz question Answers *  ` while (a = 0; a < b; a++)
-{
-    printf("%d\n", a);
-}
- ` 
-*  ` a = 0;
-while (a < b)
-{
-    printf("%d\n", a);
-    a++;
-}
- ` 
-*  ` a = 0;
-do {
-    printf("%d\n", a);
-    a++;
-} while (a < b);
- ` 
-*  ` a = 0;
-while (a < b)
-    printf("%d\n", a++);
- ` 
-*  ` a = 0;
-while (a < b)
-(
-    printf("%d\n", a);
-    a++;
-)
- ` 
-*  ` a = 0;
-do while (a < b)
-{
-    printf("%d\n", a);
-    a++;
-}
- ` 
+ Quiz question Body What is the ASCII value of   ` - `  ?
+ Quiz question Answers * 45
+
+* 3
+
+* 47
+
+ Quiz question Tips #### 
+        
+        Question #6
+    
+ Quiz question Body What is the ASCII value of   ` 5 `  ?
+ Quiz question Answers * 50
+
+* 53
+
+* 5
+
+ Quiz question Tips #### 
+        
+        Question #7
+    
+ Quiz question Body What is the result of   ` 12 % 2 `  ?
+ Quiz question Answers * 0
+
+* 1
+
+* 2
+
+ Quiz question Tips #### 
+        
+        Question #8
+    
+ Quiz question Body What is the result of   ` 12 % 3 `  ?
+ Quiz question Answers * 0
+
+* 1
+
+* 2
+
+* 3
+
+ Quiz question Tips #### 
+        
+        Question #9
+    
+ Quiz question Body What is the result of   ` 12 % 10 `  ?
+ Quiz question Answers * 0
+
+* 1
+
+* 2
+
+* 3
+
+ Quiz question Tips #### 
+        
+        Question #10
+    
+ Quiz question Body What is the result of   ` 89 % 7 `  ?
+ Quiz question Answers * 0
+
+* 2
+
+* 3
+
+* 5
+
  Quiz question Tips ## Tasks
-### 0. Positive anything is better than negative nothing
-          mandatory         Progress vs Score           Score: 100.00% (Checks completed: 100.00%)         Task Body This program will assign a random number to the variable   ` n `   each time it is executed. Complete the source code in order to print whether the number stored in the variable   ` n `   is positive or negative.
-* You can find the source code [here](https://intranet.hbtn.io/rltoken/7UBSgP4-dX9UI_R-fz7yYQ) 
-
-* The variable  ` n `  will store a different value every time you will run this program
-* You don’t have to understand what  ` rand ` ,  ` srand ` ,  ` RAND_MAX `  do. Please do not touch this code
-* The output of the program should be:* The number, followed by* if the number is greater than 0:  ` is positive ` 
-* if the number is 0:  ` is zero ` 
-* if the number is less than 0:  ` is negative ` 
-
-* followed by a new line
-
+### 0. _putchar
+          mandatory         Progress vs Score           Score: 100.00% (Checks completed: 100.00%)         Task Body Write a program that prints   ` _putchar `  , followed by a new line.
+* The program should return  ` 0 ` 
 ```bash
-julien@ubuntu:~/0x01$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 0-positive_or_negative.c -o 0-positive_or_negative
-julien@ubuntu:~/0x01$ ./0-positive_or_negative 
--520693284 is negative
-julien@ubuntu:~/0x01$ ./0-positive_or_negative 
--973398895 is negative
-julien@ubuntu:~/0x01$ ./0-positive_or_negative 
--199220452 is negative
-julien@ubuntu:~/0x01$ ./0-positive_or_negative 
-561319348 is positive
-julien@ubuntu:~/0x01$ ./0-positive_or_negative 
-561319348 is positive
-julien@ubuntu:~/0x01$ ./0-positive_or_negative 
-266853958 is positive
-julien@ubuntu:~/0x01$ ./0-positive_or_negative 
--48147767 is negative
-julien@ubuntu:~/0x01$ ./0-positive_or_negative 
-0 is zero
-julien@ubuntu:~/0x01$ 
+julien@ubuntu:~/0x02$  gcc -Wall -pedantic -Werror -Wextra -std=gnu89 _putchar.c 0-putchar.c -o 0-putchar
+julien@ubuntu:~/0x02$ ./0-putchar 
+_putchar
+julien@ubuntu:~/0x02$ 
 
 ```
  Task URLs  Github information Repo:
 * GitHub repository:  ` holbertonschool-low_level_programming ` 
-* Directory:  ` 0x01-variables_if_else_while ` 
-* File:  ` 0-positive_or_negative.c ` 
+* Directory:  ` 0x02-functions_nested_loops ` 
+* File:  ` 0-putchar.c ` 
  Self-paced manual review  Panel footer - Controls 
-### 1. The last digit
-          mandatory         Progress vs Score           Score: 100.00% (Checks completed: 100.00%)         Task Body This program will assign a random number to the variable   ` n `   each time it is executed. Complete the source code in order to print the last digit of the number stored in the variable   ` n `  .
-* You can find the source code [here](https://intranet.hbtn.io/rltoken/oFiQttJDmwMElxNT6fqSiA) 
-
-* The variable  ` n `  will store a different value every time you run this program
-* You don’t have to understand what  ` rand ` ,  ` srand ` , and  ` RAND_MAX `  do. Please do not touch this code
-* The output of the program should be:* The string  ` Last digit of ` , followed by
-*  ` n ` , followed by
-* the string  ` is ` , followed by* if the last digit of  ` n `  is greater than 5: the string  ` and is greater than 5 ` 
-* if the last digit of  ` n `  is 0: the string  ` and is 0 ` 
-* if the last digit of  ` n `  is less than 6 and not 0: the string  ` and is less than 6 and not 0 ` 
-
-* followed by a new line
-
+### 1. I sometimes suffer from insomnia. And when I can't fall asleep, I play what I call the alphabet game
+          mandatory         Progress vs Score           Score: 100.00% (Checks completed: 100.00%)         Task Body Write a function that prints the alphabet, in lowercase, followed by a new line.
+* Prototype:  ` void print_alphabet(void); ` 
+* You can only use  ` _putchar `  twice in your code
 ```bash
-julien@ubuntu:~/0x01$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 1-last_digit.c -o 1-last_digit
-julien@ubuntu:~/0x01$ ./1-last_digit 
-Last digit of 629438752 is 2 and is less than 6 and not 0
-julien@ubuntu:~/0x01$ ./1-last_digit 
-Last digit of -748255693 is -3 and is less than 6 and not 0
-julien@ubuntu:~/0x01$ ./1-last_digit 
-Last digit of -1052791662 is -2 and is less than 6 and not 0
-julien@ubuntu:~/0x01$ ./1-last_digit 
-Last digit of -284805734 is -4 and is less than 6 and not 0
-julien@ubuntu:~/0x01$ ./1-last_digit 
-Last digit of -284805734 is -4 and is less than 6 and not 0
-julien@ubuntu:~/0x01$ ./1-last_digit 
-Last digit of 491506926 is 6 and is greater than 5
-julien@ubuntu:~/0x01$ ./1-last_digit 
-Last digit of 954249937 is 7 and is greater than 5
-julien@ubuntu:~/0x01$ ./1-last_digit 
-Last digit of 652334952 is 2 and is less than 6 and not 0
-julien@ubuntu:~/0x01$ ./1-last_digit 
-Last digit of -729688197 is -7 and is less than 6 and not 0
-julien@ubuntu:~/0x01$ ./1-last_digit 
-Last digit of -729688197 is -7 and is less than 6 and not 0
-julien@ubuntu:~/0x01$ ./1-last_digit 
-Last digit of 45528266 is 6 and is greater than 5
-julien@ubuntu:~/0x01$ ./1-last_digit 
-Last digit of 45528266 is 6 and is greater than 5
-julien@ubuntu:~/0x01$ ./1-last_digit 
-Last digit of 809065140 is 0 and is 0
-julien@ubuntu:~/0x01$
+julien@ubuntu:~/0x02$ cat 1-main.c
+#include "main.h"
 
-```
- Task URLs  Github information Repo:
-* GitHub repository:  ` holbertonschool-low_level_programming ` 
-* Directory:  ` 0x01-variables_if_else_while ` 
-* File:  ` 1-last_digit.c ` 
- Self-paced manual review  Panel footer - Controls 
-### 2. I sometimes suffer from insomnia. And when I can't fall asleep, I play what I call the alphabet game
-          mandatory         Progress vs Score           Score: 100.00% (Checks completed: 100.00%)         Task Body Write a program that prints the alphabet in lowercase, followed by a new line.
-* You can only use the  ` putchar `  function (every other function ( ` printf ` ,  ` puts ` , etc…) is forbidden)
-* All your code should be in the  ` main `  function
-* You can only use  ` putchar `  twice in your code
-```bash
-julien@ubuntu:~/0x01$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 2-print_alphabet.c -o 2-print_alphabet
-julien@ubuntu:~/0x01$ ./2-print_alphabet 
+/**
+ * main - check the code
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+    print_alphabet();
+    return (0);
+}
+julien@ubuntu:~/0x02$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 _putchar.c 1-main.c 1-alphabet.c -o 1-alphabet
+julien@ubuntu:~/0x02$ ./1-alphabet 
 abcdefghijklmnopqrstuvwxyz
-julien@ubuntu:~/0x01$
+julien@ubuntu:~/0x02$
 
 ```
  Task URLs  Github information Repo:
 * GitHub repository:  ` holbertonschool-low_level_programming ` 
-* Directory:  ` 0x01-variables_if_else_while ` 
-* File:  ` 2-print_alphabet.c ` 
+* Directory:  ` 0x02-functions_nested_loops ` 
+* File:  ` 1-alphabet.c ` 
  Self-paced manual review  Panel footer - Controls 
-### 3. alphABET
-          mandatory         Progress vs Score           Score: 100.00% (Checks completed: 100.00%)         Task Body Write a program that prints the alphabet in lowercase, and then in uppercase, followed by a new line.
-* You can only use the  ` putchar `  function (every other function ( ` printf ` ,  ` puts ` , etc…) is forbidden)
-* All your code should be in the  ` main `  function
-* You can only use  ` putchar `  three times in your code
+### 2. 10 x alphabet
+          mandatory         Progress vs Score           Score: 100.00% (Checks completed: 100.00%)         Task Body Write a function that prints 10 times the alphabet, in lowercase, followed by a new line.
+* Prototype:  ` void print_alphabet_x10(void); ` 
+* You can only use  ` _putchar `  twice in your code
 ```bash
-julien@ubuntu:~/0x01$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 3-print_alphabets.c -o 3-print_alphabets
-julien@ubuntu:~/0x01$ ./3-print_alphabets | cat -e
-abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ$
-julien@ubuntu:~/0x01$ 
+julien@ubuntu:~/0x02$ cat 2-main.c
+#include "main.h"
+
+/**
+ * main - check the code.
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+    print_alphabet_x10();
+    return (0);
+}
+julien@ubuntu:~/0x02$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 _putchar.c 2-main.c 2-print_alphabet_x10.c -o 2-alphabet_x10
+julien@ubuntu:~/0x02$ ./2-alphabet_x10 
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+julien@ubuntu:~/0x02$ 
 
 ```
  Task URLs  Github information Repo:
 * GitHub repository:  ` holbertonschool-low_level_programming ` 
-* Directory:  ` 0x01-variables_if_else_while ` 
-* File:  ` 3-print_alphabets.c ` 
+* Directory:  ` 0x02-functions_nested_loops ` 
+* File:  ` 2-print_alphabet_x10.c ` 
  Self-paced manual review  Panel footer - Controls 
-### 4. When I was having that alphabet soup, I never thought that it would pay off
-          mandatory         Progress vs Score           Score: 100.00% (Checks completed: 100.00%)         Task Body Write a program that prints the alphabet in lowercase, followed by a new line.
-* Print all the letters except  ` q `  and  ` e ` 
-* You can only use the  ` putchar `  function (every other function ( ` printf ` ,  ` puts ` , etc…) is forbidden)
-* All your code should be in the  ` main `  function
-* You can only use  ` putchar `  twice in your code
+### 3. islower
+          mandatory         Progress vs Score           Score: 100.00% (Checks completed: 100.00%)         Task Body Write a function that checks for lowercase character. 
+* Prototype:  ` int _islower(int c); ` 
+* Returns  ` 1 `  if  ` c `  is lowercase
+* Returns  ` 0 `  otherwise
+FYI: The standard library provides a similar function:   ` islower `  . Run   ` man islower `   to learn more.
 ```bash
-julien@ubuntu:~/0x01$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 4-print_alphabt.c -o 4-print_alphabt
-julien@ubuntu:~/0x01$ ./4-print_alphabt 
-abcdfghijklmnoprstuvwxyz
-julien@ubuntu:~/0x01$ ./4-print_alphabt | grep [eq]
-julien@ubuntu:~/0x01$ 
+julien@ubuntu:~/0x02$ cat 3-main.c 
+#include "main.h"
+
+/**
+ * main - check the code.
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+    int r;
+
+    r = _islower('H');
+    _putchar(r + '0');
+    r = _islower('o');
+    _putchar(r + '0');
+    r = _islower(108);
+    _putchar(r + '0');
+    _putchar('\n');
+    return (0);
+}
+julien@ubuntu:~/0x02$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 _putchar.c 3-main.c 3-islower.c -o 3-islower
+julien@ubuntu:~/0x02$ ./3-islower 
+011
+julien@ubuntu:~/0x02$ 
 
 ```
  Task URLs  Github information Repo:
 * GitHub repository:  ` holbertonschool-low_level_programming ` 
-* Directory:  ` 0x01-variables_if_else_while ` 
-* File:  ` 4-print_alphabt.c ` 
+* Directory:  ` 0x02-functions_nested_loops ` 
+* File:  ` 3-islower.c ` 
  Self-paced manual review  Panel footer - Controls 
-### 5. Numbers
-          mandatory         Progress vs Score           Score: 100.00% (Checks completed: 100.00%)         Task Body Write a program that prints all single digit numbers of base 10 starting from   ` 0 `  , followed by a new line.
-* All your code should be in the  ` main `  function
+### 4. isalpha
+          mandatory         Progress vs Score           Score: 100.00% (Checks completed: 100.00%)         Task Body Write a function that checks for alphabetic character. 
+* Prototype:  ` int _isalpha(int c); ` 
+* Returns  ` 1 `  if  ` c `  is a letter, lowercase or uppercase
+* Returns  ` 0 `  otherwise
+FYI: The standard library provides a similar function:   ` isalpha `  . Run   ` man isalpha `   to learn more.
 ```bash
-julien@ubuntu:~/0x01$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 5-print_numbers.c -o 5-print_numbers
-julien@ubuntu:~/0x01$ ./5-print_numbers 
-0123456789
-julien@ubuntu:~/0x01$ 
+julien@ubuntu:~/0x02$ cat 4-main.c 
+#include "main.h"
+
+/**
+ * main - check the code.
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+    int r;
+
+    r = _isalpha('H');
+    _putchar(r + '0');
+    r = _isalpha('o');
+    _putchar(r + '0');
+    r = _isalpha(108);
+    _putchar(r + '0');
+    r = _isalpha(';');
+    _putchar(r + '0');
+    _putchar('\n');
+    return (0);
+}
+julien@ubuntu:~/0x02$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 _putchar.c 4-main.c 4-isalpha.c -o 4-isalpha
+julien@ubuntu:~/0x02$ ./4-isalpha 
+1110
+julien@ubuntu:~/0x02$ 
 
 ```
  Task URLs  Github information Repo:
 * GitHub repository:  ` holbertonschool-low_level_programming ` 
-* Directory:  ` 0x01-variables_if_else_while ` 
-* File:  ` 5-print_numbers.c ` 
+* Directory:  ` 0x02-functions_nested_loops ` 
+* File:  ` 4-isalpha.c ` 
  Self-paced manual review  Panel footer - Controls 
-### 6. Numberz
-          mandatory         Progress vs Score           Score: 100.00% (Checks completed: 100.00%)         Task Body Write a program that prints all single digit numbers of base 10 starting from   ` 0 `  , followed by a new line.
-* You are not allowed to use any variable of type  ` char ` 
-* You can only use the  ` putchar `  function (every other function ( ` printf ` ,  ` puts ` , etc…) is forbidden)
-* You can only use  ` putchar `  twice in your code
-* All your code should be in the  ` main `  function
+### 5. Sign
+          mandatory         Progress vs Score           Score: 100.00% (Checks completed: 100.00%)         Task Body Write a function that prints the sign of a number.
+* Prototype:  ` int print_sign(int n); ` 
+* Returns  ` 1 `  and prints  ` + `  if  ` n `  is greater than zero
+* Returns  ` 0 `  and prints  ` 0 `  if  ` n `  is zero
+* Returns  ` -1 `  and prints  ` - `  if  ` n `  is less than zero
 ```bash
-julien@ubuntu:~/0x01$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 6-print_numberz.c -o 6-print_numberz
-julien@ubuntu:~/0x01$ ./6-print_numberz 
-0123456789
-julien@ubuntu:~/0x01$ 
+julien@ubuntu:~/0x02$ cat 5-main.c
+#include "main.h"
+
+/**
+ * main - check the code.
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+    int r;
+
+    r = print_sign(98);
+    _putchar(',');
+    _putchar(' ');
+    _putchar(r + '0');
+    _putchar('\n');
+    r = print_sign(0);
+    _putchar(',');
+    _putchar(' ');
+    _putchar(r + '0');
+    _putchar('\n');
+    r = print_sign(0xff);
+    _putchar(',');
+    _putchar(' ');
+    _putchar(r + '0');
+    _putchar('\n');
+    r = print_sign(-1);
+    _putchar(',');
+    _putchar(' ');
+    _putchar(r + '0');
+    _putchar('\n');
+    return (0);
+}
+julien@ubuntu:~/0x02$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 _putchar.c 5-main.c 5-sign.c -o 5-sign
+julien@ubuntu:~/0x02$ ./5-sign 
++, 1
+0, 0
++, 1
+-, /
+julien@ubuntu:~/0x02$ 
 
 ```
  Task URLs  Github information Repo:
 * GitHub repository:  ` holbertonschool-low_level_programming ` 
-* Directory:  ` 0x01-variables_if_else_while ` 
-* File:  ` 6-print_numberz.c ` 
+* Directory:  ` 0x02-functions_nested_loops ` 
+* File:  ` 5-sign.c ` 
  Self-paced manual review  Panel footer - Controls 
-### 7. Smile in the mirror
-          mandatory         Progress vs Score           Score: 100.00% (Checks completed: 100.00%)         Task Body Write a program that prints the lowercase alphabet in reverse, followed by a new line.
-* You can only use the  ` putchar `  function (every other function ( ` printf ` ,  ` puts ` , etc…) is forbidden)
-* All your code should be in the  ` main `  function
-* You can only use  ` putchar `  twice in your code
+### 6. There is no such thing as absolute value in this world. You can only estimate what a thing is worth to you
+          mandatory         Progress vs Score           Score: 100.00% (Checks completed: 100.00%)         Task Body Write a function that computes the absolute value of an integer.
+* Prototype:  ` int _abs(int); ` 
+FYI: The standard library provides a similar function:   ` abs `  . Run   ` man abs `   to learn more.
 ```bash
-julien@ubuntu:~/0x01$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 7-print_tebahpla.c -o 7-print_tebahpla
-julien@ubuntu:~/0x01$ ./7-print_tebahpla
-zyxwvutsrqponmlkjihgfedcba
-julien@ubuntu:~/0x01$
+julien@ubuntu:~/0x02$ cat 6-main.c
+#include "main.h"
+#include <stdio.h>
+
+/**
+ * main - check the code
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+    int r;
+
+    r = _abs(-1);
+    printf("%d\n", r);
+    r = _abs(0);
+    printf("%d\n", r);
+    r = _abs(1);
+    printf("%d\n", r);
+    r = _abs(-98);
+    printf("%d\n", r);
+    return (0);
+}
+julien@ubuntu:~/0x02$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 _putchar.c 6-main.c 6-abs.c -o 6-abs
+julien@ubuntu:~/0x02$ ./6-abs 
+1
+0
+1
+98
+julien@ubuntu:~/0x02$ 
 
 ```
  Task URLs  Github information Repo:
 * GitHub repository:  ` holbertonschool-low_level_programming ` 
-* Directory:  ` 0x01-variables_if_else_while ` 
-* File:  ` 7-print_tebahpla.c ` 
+* Directory:  ` 0x02-functions_nested_loops ` 
+* File:  ` 6-abs.c ` 
  Self-paced manual review  Panel footer - Controls 
-### 8. Hexadecimal
-          mandatory         Progress vs Score           Score: 100.00% (Checks completed: 100.00%)         Task Body Write a program that prints all the numbers of base 16 in lowercase, followed by a new line.
-* You can only use the  ` putchar `  function (every other function ( ` printf ` ,  ` puts ` , etc…) is forbidden)
-* All your code should be in the  ` main `  function
-* You can only use  ` putchar `  three times in your code
+### 7. There are only 3 colors, 10 digits, and 7 notes; it's what we do with them that's important
+          mandatory         Progress vs Score           Score: 100.00% (Checks completed: 100.00%)         Task Body Write a function that prints the last digit of a number.
+* Prototype:  ` int print_last_digit(int); ` 
+* Returns the value of the last digit
 ```bash
-julien@ubuntu:~/0x01$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 8-print_base16.c -o 8-print_base16
-julien@ubuntu:~/0x01$ ./8-print_base16
-0123456789abcdef
-julien@ubuntu:~/0x01$
+julien@ubuntu:~/0x02$ cat 7-main.c
+#include "main.h"
+
+/**
+ * main - check the code
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+    int r;
+
+    print_last_digit(98);
+    print_last_digit(0);
+    r = print_last_digit(-1024);
+    _putchar('0' + r);
+    _putchar('\n');
+    return (0);
+}
+julien@ubuntu:~/0x02$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 _putchar.c 7-main.c 7-print_last_digit.c -o 7-last_digit
+julien@ubuntu:~/0x02$ ./7-last_digit 
+8044
+julien@ubuntu:~/0x02$ 
 
 ```
  Task URLs  Github information Repo:
 * GitHub repository:  ` holbertonschool-low_level_programming ` 
-* Directory:  ` 0x01-variables_if_else_while ` 
-* File:  ` 8-print_base16.c ` 
+* Directory:  ` 0x02-functions_nested_loops ` 
+* File:  ` 7-print_last_digit.c ` 
  Self-paced manual review  Panel footer - Controls 
-### 9. Patience, persistence and perspiration make an unbeatable combination for success
-          mandatory         Progress vs Score           Score: 100.00% (Checks completed: 100.00%)         Task Body Write a program that prints all possible combinations of single-digit numbers.
-* Numbers must be separated by  ` , ` , followed by a space
-* Numbers should be printed in ascending order
-* You can only use the  ` putchar `  function (every other function ( ` printf ` ,  ` puts ` , etc…) is forbidden)
-* All your code should be in the  ` main `  function
-* You can only use  ` putchar `  four times maximum in your code
-* You are not allowed to use any variable of type  ` char ` 
+### 8. I'm federal agent Jack Bauer, and today is the longest day of my life
+          mandatory         Progress vs Score           Score: 100.00% (Checks completed: 100.00%)         Task Body Write a function that prints every minute of the day of Jack Bauer, starting from 00:00 to 23:59.
+* Prototype:  ` void jack_bauer(void); ` 
+* You can listen to [this soundtrack](https://intranet.hbtn.io/rltoken/CF-MAQgUTibmVPRfQF3VkQ) 
+ while coding :)
 ```bash
-julien@ubuntu:~/0x01$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 9-print_comb.c -o 9-print_comb
-julien@ubuntu:~/0x01$ ./9-print_comb | cat -e
-0, 1, 2, 3, 4, 5, 6, 7, 8, 9$
-julien@ubuntu:~/0x01$ 
+julien@ubuntu:~/0x02$ cat 8-main.c
+#include "main.h"
+
+/**
+ * main - check the code
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+    jack_bauer();
+    return (0);
+}
+julien@ubuntu:~/0x02$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 _putchar.c 8-main.c 8-24_hours.c -o 8-24
+julien@ubuntu:~/0x02$ ./8-24 | head
+00:00
+00:01
+00:02
+00:03
+00:04
+00:05
+00:06
+00:07
+00:08
+00:09
+julien@ubuntu:~/0x02$ ./8-24 | tail
+23:50
+23:51
+23:52
+23:53
+23:54
+23:55
+23:56
+23:57
+23:58
+23:59
+julien@ubuntu:~/0x02$ ./8-24 | wc -l
+1440
+julien@ubuntu:~/0x02$ 
 
 ```
  Task URLs  Github information Repo:
 * GitHub repository:  ` holbertonschool-low_level_programming ` 
-* Directory:  ` 0x01-variables_if_else_while ` 
-* File:  ` 9-print_comb.c ` 
+* Directory:  ` 0x02-functions_nested_loops ` 
+* File:  ` 8-24_hours.c ` 
  Self-paced manual review  Panel footer - Controls 
-### 10. Inventing is a combination of brains and materials. The more brains you use, the less material you need
-          #advanced         Progress vs Score           Score: 100.00% (Checks completed: 100.00%)         Task Body Write a program that prints all possible different combinations of two digits.
-* Numbers must be separated by  ` , ` , followed by a space
-* The two digits must be different
-*  ` 01 `  and  ` 10 `  are considered the same combination of the two digits  ` 0 `  and  ` 1 ` 
-* Print only the smallest combination of two digits
-* Numbers should be printed in ascending order, with two digits
-* You can only use the  ` putchar `  function (every other function ( ` printf ` ,  ` puts ` , etc…) is forbidden)
-* You can only use  ` putchar `  five times maximum in your code
-* You are not allowed to use any variable of type  ` char ` 
-* All your code should be in the  ` main `  function
+### 9. Learn your times table
+          mandatory         Progress vs Score           Score: 100.00% (Checks completed: 100.00%)         Task Body Write a function that prints the 9 times table, starting with 0.
+* Prototype:  ` void times_table(void); ` 
+* Format: see example
 ```bash
-julien@ubuntu:~/0x01$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 100-print_comb3.c -o 100-print_comb3
-julien@ubuntu:~/0x01$ ./100-print_comb3
-01, 02, 03, 04, 05, 06, 07, 08, 09, 12, 13, 14, 15, 16, 17, 18, 19, 23, 24, 25, 26, 27, 28, 29, 34, 35, 36, 37, 38, 39, 45, 46, 47, 48, 49, 56, 57, 58, 59, 67, 68, 69, 78, 79, 89
-julien@ubuntu:~/0x01$ 
+julien@ubuntu:~/0x02$ cat 9-main.c
+#include "main.h"
+
+/**
+ * main - check the code
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+    times_table();
+    return (0);
+}
+julien@ubuntu:~/0x02$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 _putchar.c 9-main.c 9-times_table.c -o 9-times_table
+ulien@ubuntu:~/0x02$ ./9-times_table | cat -e
+0,  0,  0,  0,  0,  0,  0,  0,  0,  0$
+0,  1,  2,  3,  4,  5,  6,  7,  8,  9$
+0,  2,  4,  6,  8, 10, 12, 14, 16, 18$
+0,  3,  6,  9, 12, 15, 18, 21, 24, 27$
+0,  4,  8, 12, 16, 20, 24, 28, 32, 36$
+0,  5, 10, 15, 20, 25, 30, 35, 40, 45$
+0,  6, 12, 18, 24, 30, 36, 42, 48, 54$
+0,  7, 14, 21, 28, 35, 42, 49, 56, 63$
+0,  8, 16, 24, 32, 40, 48, 56, 64, 72$
+0,  9, 18, 27, 36, 45, 54, 63, 72, 81$
+julien@ubuntu:~/0x02$ ./9-times_table | tr ' ' . | cat -e
+0,..0,..0,..0,..0,..0,..0,..0,..0,..0$
+0,..1,..2,..3,..4,..5,..6,..7,..8,..9$
+0,..2,..4,..6,..8,.10,.12,.14,.16,.18$
+0,..3,..6,..9,.12,.15,.18,.21,.24,.27$
+0,..4,..8,.12,.16,.20,.24,.28,.32,.36$
+0,..5,.10,.15,.20,.25,.30,.35,.40,.45$
+0,..6,.12,.18,.24,.30,.36,.42,.48,.54$
+0,..7,.14,.21,.28,.35,.42,.49,.56,.63$
+0,..8,.16,.24,.32,.40,.48,.56,.64,.72$
+0,..9,.18,.27,.36,.45,.54,.63,.72,.81$
+julien@ubuntu:~/0x02$ 
 
 ```
  Task URLs  Github information Repo:
 * GitHub repository:  ` holbertonschool-low_level_programming ` 
-* Directory:  ` 0x01-variables_if_else_while ` 
-* File:  ` 100-print_comb3.c ` 
+* Directory:  ` 0x02-functions_nested_loops ` 
+* File:  ` 9-times_table.c ` 
  Self-paced manual review  Panel footer - Controls 
-### 11. The success combination in business is: Do what you do better... and: do more of what you do...
-          #advanced         Progress vs Score           Score: 100.00% (Checks completed: 100.00%)         Task Body Write a program that prints all possible different combinations of three digits.
-* Numbers must be separated by  ` , ` , followed by a space
-* The three digits must be different
-*  ` 012 ` ,  ` 120 ` ,  ` 102 ` ,  ` 021 ` ,  ` 201 ` ,  ` 210 `  are considered the same combination of the three digits  ` 0 ` ,  ` 1 `  and  ` 2 ` 
-* Print only the smallest combination of three digits
-* Numbers should be printed in ascending order, with three digits
-* You can only use the  ` putchar `  function (every other function ( ` printf ` ,  ` puts ` , etc…) is forbidden)
-* You can only use  ` putchar `  six times maximum in your code
-* You are not allowed to use any variable of type  ` char ` 
-* All your code should be in the  ` main `  function
+### 10. a + b
+          mandatory         Progress vs Score           Score: 100.00% (Checks completed: 100.00%)         Task Body Write a function that adds two integers and returns the result.
+* Prototype:  ` int add(int, int); ` 
 ```bash
-julien@ubuntu:~/0x01$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 101-print_comb4.c -o 101-print_comb4
-julien@ubuntu:~/0x01$ ./101-print_comb4
-012, 013, 014, 015, 016, 017, 018, 019, 023, 024, 025, 026, 027, 028, 029, 034, 035, 036, 037, 038, 039, 045, 046, 047, 048, 049, 056, 057, 058, 059, 067, 068, 069, 078, 079, 089, 123, 124, 125, 126, 127, 128, 129, 134, 135, 136, 137, 138, 139, 145, 146, 147, 148, 149, 156, 157, 158, 159, 167, 168, 169, 178, 179, 189, 234, 235, 236, 237, 238, 239, 245, 246, 247, 248, 249, 256, 257, 258, 259, 267, 268, 269, 278, 279, 289, 345, 346, 347, 348, 349, 356, 357, 358, 359, 367, 368, 369, 378, 379, 389, 456, 457, 458, 459, 467, 468, 469, 478, 479, 489, 567, 568, 569, 578, 579, 589, 678, 679, 689, 789
-julien@ubuntu:~/0x01$ 
+julien@ubuntu:~/$ cat 10-main.c
+#include "main.h"
+#include <stdio.h>
+
+/**
+ * main - check the code
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+    int n;
+
+    n = add(89, 9);
+    printf("%d\n", n);
+    return (0);
+}
+julien@ubuntu:~/0x02$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 _putchar.c 10-main.c 10-add.c -o 10-add
+julien@ubuntu:~/0x02$ ./10-add 
+98
+julien@ubuntu:~/0x02$ 
 
 ```
  Task URLs  Github information Repo:
 * GitHub repository:  ` holbertonschool-low_level_programming ` 
-* Directory:  ` 0x01-variables_if_else_while ` 
-* File:  ` 101-print_comb4.c ` 
+* Directory:  ` 0x02-functions_nested_loops ` 
+* File:  ` 10-add.c ` 
  Self-paced manual review  Panel footer - Controls 
-### 12. Software is eating the World
-          #advanced         Progress vs Score           Score: 37.14% (Checks completed: 57.14%)         Task Body Write a program that prints all possible combinations of two two-digit numbers.
-* The numbers should range from  ` 0 `  to  ` 99 ` 
-* The two numbers should be separated by a space
-* All numbers should be printed with two digits.  ` 1 `  should be printed as  ` 01 ` 
-* The combination of numbers must be separated by comma, followed by a space
-* The combinations of numbers should be printed in ascending order
-*  ` 00 01 `  and  ` 01 00 `  are considered as the same combination of the numbers  ` 0 `  and  ` 1 ` 
-* You can only use the  ` putchar `  function (every other function ( ` printf ` ,  ` puts ` , etc…) is forbidden)
-* You can only use  ` putchar `  eight times maximum in your code
-* You are not allowed to use any variable of type  ` char ` 
-* All your code should be in the  ` main `  function
+### 11. 98 Battery Street, the OG
+          mandatory         Progress vs Score           Score: 100.00% (Checks completed: 100.00%)         Task Body Write a function that prints all natural numbers from   ` n `   to   ` 98 `  , followed by a new line.
+* Prototype:  ` void print_to_98(int n); ` 
+* Numbers must be separated by a comma, followed by a space
+* Numbers should be printed in order
+* The first printed number should be the number passed to your function
+* The last printed number should be  ` 98 ` 
+* You are allowed to use the standard library
 ```bash
-julien@ubuntu:~/0x01$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 102-print_comb5.c -o 102-print_comb5
-julien@ubuntu:~/0x01$ ./102-print_comb5
-00 01, 00 02, 00 03, 00 04, 00 05, 00 06, 00 07, 00 08, 00 09, 00 10, 00 11, [...] 40 91, 40 92, 40 93, 40 94, 40 95, 40 96, 40 97, 40 98, 40 99, 41 42, 41 43, 41 44, 41 45, 41 46, 41 47, 41 48, 41 49, 41 50, 41 51, 41 52, 41 53 [...] 93 95, 93 96, 93 97, 93 98, 93 99, 94 95, 94 96, 94 97, 94 98, 94 99, 95 96, 95 97, 95 98, 95 99, 96 97, 96 98, 96 99, 97 98, 97 99, 98 99
+julien@ubuntu:~/0x02$ cat 11-main.c
+#include "main.h"
+
+/**
+ * main - check the code
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+    print_to_98(0);
+    print_to_98(98);
+    print_to_98(111);
+    print_to_98(81);
+    print_to_98(-10);
+    return (0);
+}
+julien@ubuntu:~/0x02$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 _putchar.c 11-main.c 11-print_to_98.c -o 11-98
+julien@ubuntu:~/0x02$ ./11-98 
+0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98
+98
+111, 110, 109, 108, 107, 106, 105, 104, 103, 102, 101, 100, 99, 98
+81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98
+-10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98
+julien@ubuntu:~/0x02$ 
 
 ```
  Task URLs  Github information Repo:
 * GitHub repository:  ` holbertonschool-low_level_programming ` 
-* Directory:  ` 0x01-variables_if_else_while ` 
-* File:  ` 102-print_comb5.c ` 
+* Directory:  ` 0x02-functions_nested_loops ` 
+* File:  ` 11-print_to_98.c ` 
+ Self-paced manual review  Panel footer - Controls 
+### 12. The World looks like a multiplication-table, or a mathematical equation, which, turn it how you will, balances itself
+          #advanced         Progress vs Score           Score: 56.88% (Checks completed: 87.50%)         Task Body Write a function that prints the   ` n `   times table, starting with 0.
+* Prototype:  ` void print_times_table(int n); ` 
+* If  ` n `  is greater than  ` 15 `  or less than  ` 0 `  the function should not print anything
+* Format: see example
+```bash
+julien@ubuntu:~/0x02$ cat 100-main.c
+#include "main.h"
+
+/**
+ * main - check the code.
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+    print_times_table(3);
+    _putchar('\n');
+    print_times_table(5);
+    _putchar('\n');
+    print_times_table(98);
+    _putchar('\n');
+    print_times_table(12);  
+    return (0);
+}
+julien@ubuntu:~/0x02$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 _putchar.c 100-main.c 100-times_table.c -o 100-times_table
+julien@ubuntu:~/0x02$ ./100-times_table 
+0,   0,   0,   0
+0,   1,   2,   3
+0,   2,   4,   6
+0,   3,   6,   9
+
+0,   0,   0,   0,   0,   0
+0,   1,   2,   3,   4,   5
+0,   2,   4,   6,   8,  10
+0,   3,   6,   9,  12,  15
+0,   4,   8,  12,  16,  20
+0,   5,  10,  15,  20,  25
+
+
+0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+0,   1,   2,   3,   4,   5,   6,   7,   8,   9,  10,  11,  12
+0,   2,   4,   6,   8,  10,  12,  14,  16,  18,  20,  22,  24
+0,   3,   6,   9,  12,  15,  18,  21,  24,  27,  30,  33,  36
+0,   4,   8,  12,  16,  20,  24,  28,  32,  36,  40,  44,  48
+0,   5,  10,  15,  20,  25,  30,  35,  40,  45,  50,  55,  60
+0,   6,  12,  18,  24,  30,  36,  42,  48,  54,  60,  66,  72
+0,   7,  14,  21,  28,  35,  42,  49,  56,  63,  70,  77,  84
+0,   8,  16,  24,  32,  40,  48,  56,  64,  72,  80,  88,  96
+0,   9,  18,  27,  36,  45,  54,  63,  72,  81,  90,  99, 108
+0,  10,  20,  30,  40,  50,  60,  70,  80,  90, 100, 110, 120
+0,  11,  22,  33,  44,  55,  66,  77,  88,  99, 110, 121, 132
+0,  12,  24,  36,  48,  60,  72,  84,  96, 108, 120, 132, 144
+julien@ubuntu:~/0x02$ ./100-times_table | tr ' ' . | cat -e
+0,...0,...0,...0$
+0,...1,...2,...3$
+0,...2,...4,...6$
+0,...3,...6,...9$
+$
+0,...0,...0,...0,...0,...0$
+0,...1,...2,...3,...4,...5$
+0,...2,...4,...6,...8,..10$
+0,...3,...6,...9,..12,..15$
+0,...4,...8,..12,..16,..20$
+0,...5,..10,..15,..20,..25$
+$
+$
+0,...0,...0,...0,...0,...0,...0,...0,...0,...0,...0,...0,...0$
+0,...1,...2,...3,...4,...5,...6,...7,...8,...9,..10,..11,..12$
+0,...2,...4,...6,...8,..10,..12,..14,..16,..18,..20,..22,..24$
+0,...3,...6,...9,..12,..15,..18,..21,..24,..27,..30,..33,..36$
+0,...4,...8,..12,..16,..20,..24,..28,..32,..36,..40,..44,..48$
+0,...5,..10,..15,..20,..25,..30,..35,..40,..45,..50,..55,..60$
+0,...6,..12,..18,..24,..30,..36,..42,..48,..54,..60,..66,..72$
+0,...7,..14,..21,..28,..35,..42,..49,..56,..63,..70,..77,..84$
+0,...8,..16,..24,..32,..40,..48,..56,..64,..72,..80,..88,..96$
+0,...9,..18,..27,..36,..45,..54,..63,..72,..81,..90,..99,.108$
+0,..10,..20,..30,..40,..50,..60,..70,..80,..90,.100,.110,.120$
+0,..11,..22,..33,..44,..55,..66,..77,..88,..99,.110,.121,.132$
+0,..12,..24,..36,..48,..60,..72,..84,..96,.108,.120,.132,.144$
+julien@ubuntu:~/0x02$ 
+
+```
+ Task URLs  Github information Repo:
+* GitHub repository:  ` holbertonschool-low_level_programming ` 
+* Directory:  ` 0x02-functions_nested_loops ` 
+* File:  ` 100-times_table.c ` 
+ Self-paced manual review  Panel footer - Controls 
+### 13. Nature made the natural numbers; All else is the work of women
+          #advanced         Progress vs Score           Score: 0.00% (Checks completed: 0.00%)         Task Body If we list all the natural numbers below   ` 10 `   that are multiples of   ` 3 `   or   ` 5 `  , we get   ` 3 `  ,   ` 5 `  ,   ` 6 `   and   ` 9 `  . The sum of these multiples is   ` 23 `  . Write a program that computes and prints the sum of all the multiples of   ` 3 `   or   ` 5 `   below   ` 1024 `   (excluded), followed by a new line.
+* You are allowed to use the standard library
+ Task URLs  Github information Repo:
+* GitHub repository:  ` holbertonschool-low_level_programming ` 
+* Directory:  ` 0x02-functions_nested_loops ` 
+* File:  ` 101-natural.c ` 
+ Self-paced manual review  Panel footer - Controls 
+### 14. In computer class, the first assignment was to write a program to print the first 100 Fibonacci numbers. Instead, I wrote a program that would steal passwords of students. My teacher gave me an A
+          #advanced         Progress vs Score           Score: 0.00% (Checks completed: 0.00%)         Task Body Write a program that prints the first 50 Fibonacci numbers, starting with   ` 1 `   and   ` 2 `  , followed by a new line.
+* The numbers must be separated by comma, followed by a space  ` ,  ` 
+* You are allowed to use the standard library
+ Task URLs  Github information Repo:
+* GitHub repository:  ` holbertonschool-low_level_programming ` 
+* Directory:  ` 0x02-functions_nested_loops ` 
+* File:  ` 102-fibonacci.c ` 
+ Self-paced manual review  Panel footer - Controls 
+### 15. Even Liber Abbaci
+          #advanced         Progress vs Score           Score: 0.00% (Checks completed: 0.00%)         Task Body Each new term in the Fibonacci sequence is generated by adding the previous two terms. By starting with   ` 1 `   and   ` 2 `  , the first 10 terms will be:   ` 1, 2, 3, 5, 8, 13, 21, 34, 55, 89 `  . By considering the terms in the Fibonacci sequence whose values do not exceed 4,000,000, write a program that finds and prints the sum of the even-valued terms, followed by a new line.
+* You are allowed to use the standard library
+ Task URLs  Github information Repo:
+* GitHub repository:  ` holbertonschool-low_level_programming ` 
+* Directory:  ` 0x02-functions_nested_loops ` 
+* File:  ` 103-fibonacci.c ` 
+ Self-paced manual review  Panel footer - Controls 
+### 16. In computer class, the first assignment was to write a program to print the first 100 Fibonacci numbers. Instead, I wrote a program that would steal passwords of students. My teacher gave me an A+
+          #advanced         Progress vs Score           Score: 0.00% (Checks completed: 0.00%)         Task Body Write a program that finds and prints the first 98 Fibonacci numbers, starting with   ` 1 `   and   ` 2 `  , followed by a new line.
+* The numbers should be separated by comma, followed by a space   ` , ` 
+* You are allowed to use the standard library
+* You are not allowed to use any other library (You can’t use  ` GMP `  etc…)
+* You are not allowed to use  ` long long ` ,  ` malloc ` , pointers, arrays/tables, or structures
+* You are not allowed to hard code any Fibonacci number (except for  ` 1 `  and  ` 2 ` )
+ Task URLs  Github information Repo:
+* GitHub repository:  ` holbertonschool-low_level_programming ` 
+* Directory:  ` 0x02-functions_nested_loops ` 
+* File:  ` 104-fibonacci.c ` 
  Self-paced manual review  Panel footer - Controls 
 ×#### Recommended Sandbox
 [Running only]() 
