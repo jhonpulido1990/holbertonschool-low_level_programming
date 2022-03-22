@@ -16,7 +16,7 @@ def island_perimeter(grid):
             arriba = v - 1
             abajo = v + 1
             if grid[i][j] == 1:
-                if izquierda > -1:
+                if izquierda > 0:
                     if grid[i][izquierda] == 0:
                         perime += 1
                 else:
@@ -26,7 +26,7 @@ def island_perimeter(grid):
                         perime += 1
                 else:
                     perime += 1
-                if arriba > -1:
+                if arriba > 0:
                     if grid[arriba][j] == 0:
                         perime += 1
                 else:
